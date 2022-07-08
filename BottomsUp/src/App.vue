@@ -1,18 +1,16 @@
 <script>
-import TestCounter from './TestCounter.vue'
+import Navbar from './Navbar.vue'
   
 export default {
   components: {
-    TestCounter
+    Navbar
   }
 }
 </script>
 
 <template>
 	<h1>Here are many child components!</h1>
-	<TestCounter />
-	<TestCounter />
-	<TestCounter />
+	<Navbar />
 </template>
 <!--
 <template>
