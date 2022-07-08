@@ -1,23 +1,31 @@
-<script> 
-  import TestCounter from '@/component/TestCounter.vue'
+<script>
+import TestCounter from './TestCounter.vue'
   
-  export default {
-    components: {
-      TestCounter
-    }
+export default {
+  components: {
+    TestCounter
+  }
 }
 </script>
 
 <template>
+	<h1>Here are many child components!</h1>
+	<TestCounter />
+	<TestCounter />
+	<TestCounter />
+</template>
+<!--
+<template>
   <header>
     The Cocktail App
-      <Navbar/>
+      <TestCounter/>
   </header>
 
   <main>
     The Beginning of the End
   </main>
 </template>
+-->
 
 
 
