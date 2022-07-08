@@ -1,31 +1,26 @@
 <script>
-// import Navbar from './component/Navbar.vue'
-
-export default {
-  components: {
-    Navbar
-  }
-}
+  export default {}
 </script>
 
 <template>
+  <div className="buttons">
     <button>By Name</button>
     <button>By Ingredient</button>
+  </div>
 </template>
 
-//TestCounter
-<script>
-export default {
-  data() {
-    return {
-      count: 0
-    }
+<style scoped>
+  .buttons {
+    display: flex;
+    justify-content: space-around;
+    background-color: inherit;
+    width: 100%
   }
-}
-</script>
 
-<template>
-  <button @click="count++">
-    You clicked me {{ count }} times.
-  </button>
-</template>
+  button {
+    border-style: hidden;
+    font-size: larger;
+    color: goldenrod;
+    background-color: black;
+  }
+</style>

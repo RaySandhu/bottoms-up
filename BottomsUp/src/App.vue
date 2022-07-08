@@ -1,31 +1,25 @@
 <script>
-import TestCounter from './TestCounter.vue'
+// @import url('https://fonts.googleapis.com/css?family=Montserrat')
+import Navbar from '../components/Navbar.vue'
   
 export default {
+  name: 'app',
   components: {
-    TestCounter
+    Navbar
   }
 }
 </script>
 
 <template>
-	<h1>Here are many child components!</h1>
-	<TestCounter />
-	<TestCounter />
-	<TestCounter />
-</template>
-<!--
-<template>
   <header>
-    The Cocktail App
-      <TestCounter/>
+	  <Navbar />
   </header>
-
-  <main>
-    The Beginning of the End
-  </main>
 </template>
--->
 
+<style>
+  body {
+    background-color: black;
+  }
+</style>
 
 
