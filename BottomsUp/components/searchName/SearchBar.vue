@@ -1,16 +1,34 @@
 <script>
-    export default {
-        name: 'searchbar',
-        methods: {
-            generateArr() {
-                //document.getElementById('ctSearch') is queried against the cocktail DB and 
-                //this func returns the array of res.drinks
-            },
-            passCTArr(){
-                this.$emit("updatelists", document.getElementById('ctSearch'))
-            }
+import mocktailDB from "../../mock(tail)DB.json"
+export default {
+    name: 'searchbar',
+    data() {
+        return {
+            ctList: Array,
+            drinkList: mocktailDB.drinks
+        }
+    },
+    methods: {
+        generateArr() {
+            //document.getElementById('ctSearch') is queried against the cocktail DB and 
+            //this func returns the array of res.drinks
+            let search = document.getElementById('ctSearch')
+
+            this.drinkList.forEach(ct => {
+                if(ct.strDrink.includes(search)) {
+                    this.ctList.push(ct)
+                }
+            })
+            console.log(this.ctList)
+            // this.passCTArr()
+        
+        },
+        passCTArr(){
+            console.log(this.ctList)
+            this.$emit("updatelists", this.ctList)
         }
     }
+}
 </script>
 
 <template>
@@ -25,6 +43,7 @@
         <button 
             id="createCTArr"
             type="button"
+            @click="this.generateArr()"
         >
         Search for Cocktails
         </button>
