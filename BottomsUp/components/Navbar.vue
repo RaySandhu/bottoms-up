@@ -35,8 +35,8 @@
   button {
     border-color: rgb(218, 165, 32, 0.75);
     border-radius: 20px;
-    font-size: larger;
-    color: black;
+    font-size: 2vem;
+    color: yellow;
     font-family: 'Montserrat' Geneva, Tahoma, sans-serif;
     /*font not working */
     background-color: rgb(218, 165, 32, 0.5);      
