@@ -4,7 +4,7 @@
     import CTDisplay from "./CTDisplay.vue"
 
     export default {
-        name: 'NameSearch',
+        name: 'SearchByName',
         components: {
             SearchBar,
             CTOptions,
@@ -19,6 +19,9 @@
         methods: {
             updateLists(newList) {
                 this.possibleList = newList
+            },
+            updateSelection(selected) {
+                this.selectedCT = selected
             }
         }
     }
@@ -28,7 +31,10 @@
 <div class="namesearchparent">
     <SearchBar @updateList='updateLists'/>
     <div v-if="possibleList != null && selectedCT == null">
-        <CTOptions :toDisplay='this.possibleList' />
+        <CTOptions 
+            :toDisplay='this.possibleList'
+            @selection="updateSelection"
+        />
     </div>
     <div v-else-if="selectedCT != null">
         <CTDisplay :selectedCT='this.selectedCT' />
