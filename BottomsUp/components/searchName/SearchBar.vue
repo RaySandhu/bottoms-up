@@ -4,7 +4,6 @@ export default {
     name: 'searchbar',
     data() {
         return {
-            ctList: [],
             drinkList: mocktailDB.drinks
         }
     },
@@ -14,18 +13,17 @@ export default {
             //this func returns the array of res.drinks
             let search = document.getElementById('ctSearch').value
             let options = JSON.parse(JSON.stringify(this.drinkList))
-
+            let ctList= []
             options.forEach(ct => {
                 //includes does not accomodate for casing differences
                 if(ct.strDrink.includes(search)) {
-                    return this.ctList.push(ct)
+                    return ctList.push(ct)
                 }
             })
-            this.passCTArr((JSON.parse(JSON.stringify(this.ctList))))
+            this.passCTArr((JSON.parse(JSON.stringify(ctList))))
         
         },
         passCTArr(optionList){
-            console.log(optionList)
             this.$emit("updatelists", optionList)
         }
     }
