@@ -7,8 +7,9 @@
       </div>
       <!-- form -->
       <div class="form">
-        <input type="text" placeholder="New Task" />
-        <button><i class="fas fa-plus"></i></button>
+        <input type="text" placeholder="New Ingredient" v-model="newIngred" 
+        @keyup.enter="addIngred"/>
+        <button @click="addIngred">Add<i class="fas fa-plus"></i></button>
       </div>
       <!-- task lists -->
       <div class="ingredients">
@@ -24,9 +25,9 @@
         <button @click="clearAll">Clear all</button>
       </div>
       <!-- pending task -->
-      <div class="pendingTasks">
+      <!-- <div class="pendingTasks">
         <span>Pending Tasks: </span>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -35,7 +36,21 @@
 export default {
   name: "Ingredients",
   props: ['ingredients'],
+  data() {
+    return{
+      newIngred: "",
+    }
+  },
   methods: {
+    addIngred(){
+      if(this.newIngred){
+        this.ingredients.push({
+          title: this.newIngred,
+          selected: false,
+        });
+        this.newIngred = "";
+      }
+    },
     clearSelected(){
       for(let i = 0; i < this.ingredients.length; i++){
         if(this.ingredients[i].selected){
