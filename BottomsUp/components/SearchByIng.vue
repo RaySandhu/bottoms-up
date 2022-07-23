@@ -12,23 +12,23 @@ import IngredList from "./searchIngredient/IngredList.vue"
                     {
                         id: 1,
                         title: "Learn Vue",
-                        completed: true
+                        selected: true
                     },                    {
                         id: 2,
                         title: "Watch Netflix",
-                        completed: true
+                        selected: true
                     },                    {
                         id: 3,
                         title: "Shopping",
-                        completed: false
+                        selected: false
                     },                    {
                         id: 4,
                         title: "Guitar",
-                        completed: false
+                        selected: false
                     },                    {
                         id: 5,
                         title: "Exercise",
-                        completed: true
+                        selected: true
                     },                    
                 ]
             }

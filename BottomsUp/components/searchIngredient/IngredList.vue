@@ -20,7 +20,7 @@
       </div>
       <!-- buttons -->
       <div class="clearBtns">
-        <button>Clear completed</button>
+        <button @click="clearSelected">Clear selected</button>
         <button @click="clearAll">Clear all</button>
       </div>
       <!-- pending task -->
@@ -36,6 +36,13 @@ export default {
   name: "Ingredients",
   props: ['ingredients'],
   methods: {
+    clearSelected(){
+      for(let i = 0; i < this.ingredients.length; i++){
+        if(this.ingredients[i].selected){
+          this.ingredients.splice(i,1);
+        }
+      }
+    },
     clearAll(){
       this.ingredients.splice(0);
     }
