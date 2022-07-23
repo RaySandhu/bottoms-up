@@ -11,22 +11,17 @@
         <button><i class="fas fa-plus"></i></button>
       </div>
       <!-- task lists -->
-      <div class="taskItems">
+      <div class="ingredients">
         <ul>
-          <li>
-            <button>Learn Vue JS</button>
-            <button><i class="far fa-trash-alt"></i></button>
-          </li>
-          <li>
-            <button>Watch netflix</button>
-            <button><i class="far fa-trash-alt"></i></button>
+          <li v-for="ingred in ingredients" :key="ingredients.id">
+            <button>{{ingred.title}}</button>
           </li>
         </ul>
       </div>
       <!-- buttons -->
       <div class="clearBtns">
         <button>Clear completed</button>
-        <button>Clear all</button>
+        <button @click="clearAll">Clear all</button>
       </div>
       <!-- pending task -->
       <div class="pendingTasks">
@@ -38,6 +33,12 @@
 
 <script>
 export default {
-  name: "Task",
+  name: "Ingredients",
+  props: ['ingredients'],
+  methods: {
+    clearAll(){
+      this.ingredients.splice(0);
+    }
+  },
 };
 </script>
