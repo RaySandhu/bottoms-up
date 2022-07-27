@@ -1,6 +1,6 @@
 <template>
     <li>
-        <button>{{ingredient.title}}</button>
+        {{ingredient.title}}
         <button @click="$emit('remove')">Delete</button>
     </li>
 </template>

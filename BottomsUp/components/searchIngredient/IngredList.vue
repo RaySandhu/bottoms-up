@@ -3,7 +3,7 @@
     <div class="task">
       <!-- title -->
       <div class="title">
-        <h1>To Do List</h1>
+        <h1>My Ingredients:</h1>
       </div>
       <!-- form -->
       <div class="form">
@@ -25,13 +25,8 @@
       </div>
       <!-- buttons -->
       <div class="clearBtns">
-        <button @click="clearSelected">Clear selected</button>
         <button @click="clearAll">Clear all</button>
       </div>
-      <!-- pending task -->
-      <!-- <div class="pendingTasks">
-        <span>Pending Tasks: </span>
-      </div> -->
     </div>
   </div>
 </template>
@@ -55,7 +50,6 @@ export default {
       if(this.newIngred){
         this.ingredients.push({
           title: this.newIngred,
-          selected: false,
         });
         this.newIngred = "";
       }
