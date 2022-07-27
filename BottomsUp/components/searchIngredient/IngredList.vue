@@ -14,10 +14,8 @@
       <!-- task lists -->
       <div class="ingredients">
         <ul>
-          <IngredientItem></IngredientItem>
-          <li v-for="ingred in ingredients" :key="ingredients.id">
-            <button>{{ingred.title}}</button>
-          </li>
+          <IngredientItem v-bind:ingredient="ingredient" v-for="ingredient in ingredients" :key="ingredient.id">
+          </IngredientItem>
         </ul>
       </div>
       <!-- buttons -->

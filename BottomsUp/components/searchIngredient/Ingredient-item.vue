@@ -1,10 +1,13 @@
 <template>
-    <h2>HERE</h2>
+    <li>
+        <button>{{ingredient.title}}</button>
+    </li>
 </template>
 
 <script>
 export default {
     name: 'IngredientItem',
+    props: ['ingredient'],
 }
 </script>
 <style>
