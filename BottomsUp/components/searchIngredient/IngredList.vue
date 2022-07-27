@@ -14,7 +14,12 @@
       <!-- task lists -->
       <div class="ingredients">
         <ul>
-          <IngredientItem v-bind:ingredient="ingredient" v-for="ingredient in ingredients" :key="ingredient.id">
+          <IngredientItem 
+            v-bind:ingredient="ingredient" 
+            v-for="(ingredient, index) in ingredients" 
+            :key="ingredient.id"
+            @remove='removeIngredient(index)'
+            >
           </IngredientItem>
         </ul>
       </div>
@@ -64,6 +69,9 @@ export default {
     },
     clearAll(){
       this.ingredients.splice(0);
+    },
+    removeIngredient(index){
+      this.ingredients.splice(index,1);
     }
   },
 };
