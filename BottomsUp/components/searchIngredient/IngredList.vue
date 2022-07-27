@@ -26,6 +26,7 @@
       <!-- buttons -->
       <div class="clearBtns">
         <button @click="clearAll">Clear all</button>
+        <button @click="searchByIngredient">Mama needs a drink</button>
       </div>
     </div>
   </div>
@@ -54,12 +55,13 @@ export default {
         this.newIngred = "";
       }
     },
-    clearSelected(){
-      for(let i = 0; i < this.ingredients.length; i++){
-        if(this.ingredients[i].selected){
-          this.ingredients.splice(i,1);
-        }
+    searchByIngredient(){
+      let myIngredients = []
+      for(let i = 0; i<this.ingredients.length; i++){
+        myIngredients.push(this.ingredients[i].title);
       }
+      console.log(myIngredients);
+      console.log(myIngredients.includes('water'));
     },
     clearAll(){
       this.ingredients.splice(0);
