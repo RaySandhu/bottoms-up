@@ -39,24 +39,44 @@ export default {
             placeholder="Enter the Name of Your Cocktail Here" 
             autocomplete="off"
         />
+    </form>
+    <div>
         <button 
             id="createCTArr"
-            type="button"
             @click="this.generateArr()"
         >
         Search for Cocktails
         </button>
-    </form>
+    </div>
 </template>
 
 <style scoped>
+
+    /* template {
+        height: 100vh;
+        top: 50%;        
+        justify-content: center;
+    } */
     .searchbar {
-        background-color: rgb(218, 165, 32, 0.5);
-        border-style: hidden;
-        border-radius: 10px;
-        height: 2.5rem;
-        min-width: 400px;
-        color: yellow;
-        font-size: larger;
+        margin: 50px 0;
+        background: none;
+        border-bottom: 1px solid white;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        min-width: fit-content;
+        width: 400px;
+        height: 30px;
+        color: darkgoldenrod;
+        font-family: 'Cormorant Garamond';
+        font-size: 2rem;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .searchbar:focus {
+        outline: none;
+        border-bottom: 3px solid silver;
+        color: goldenrod;
     }
 </style>
