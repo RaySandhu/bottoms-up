@@ -3,7 +3,7 @@
     <div class="task">
       <!-- title -->
       <div class="title">
-        <h1>To Do List</h1>
+        <h1>My Ingredients:</h1>
       </div>
       <!-- form -->
       <div class="form">
@@ -14,19 +14,20 @@
       <!-- task lists -->
       <div class="ingredients">
         <ul>
-          <IngredientItem v-bind:ingredient="ingredient" v-for="ingredient in ingredients" :key="ingredient.id">
+          <IngredientItem 
+            v-bind:ingredient="ingredient" 
+            v-for="(ingredient, index) in ingredients" 
+            :key="ingredient.id"
+            @remove='removeIngredient(index)'
+            >
           </IngredientItem>
         </ul>
       </div>
       <!-- buttons -->
       <div class="clearBtns">
-        <button @click="clearSelected">Clear selected</button>
         <button @click="clearAll">Clear all</button>
+        <button @click="searchByIngredient">Mama needs a drink</button>
       </div>
-      <!-- pending task -->
-      <!-- <div class="pendingTasks">
-        <span>Pending Tasks: </span>
-      </div> -->
     </div>
   </div>
 </template>
@@ -50,20 +51,23 @@ export default {
       if(this.newIngred){
         this.ingredients.push({
           title: this.newIngred,
-          selected: false,
         });
         this.newIngred = "";
       }
     },
-    clearSelected(){
-      for(let i = 0; i < this.ingredients.length; i++){
-        if(this.ingredients[i].selected){
-          this.ingredients.splice(i,1);
-        }
+    searchByIngredient(){
+      let myIngredients = []
+      for(let i = 0; i<this.ingredients.length; i++){
+        myIngredients.push(this.ingredients[i].title);
       }
+      console.log(myIngredients);
+      console.log(myIngredients.includes('water'));
     },
     clearAll(){
       this.ingredients.splice(0);
+    },
+    removeIngredient(index){
+      this.ingredients.splice(index,1);
     }
   },
 };
