@@ -21,9 +21,10 @@ export default {
    
   },
   methods: {
-    renderCorrect(i) {
+    renderCorrectSearchMenu(i) {
+      //toggle between name and ingredients search
+        //i is the boolean emitted by navbar to indicate which search menu is displayed
       this.showing = i
-      console.log(i)
     }
   }
 }
@@ -31,7 +32,7 @@ export default {
 
 <template>
   <header>
-	  <Navbar :display= true @change="renderCorrect"/>
+	  <Navbar :display= true @change="renderCorrectSearchMenu"/>
   </header>
   <main>
     <div v-if="showing === true">

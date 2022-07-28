@@ -33,6 +33,8 @@
 <template>
 <div class="namesearchparent">
     <SearchBar @updatelists='updateLists'/>
+
+
     <div v-if="(JSON.parse(JSON.stringify(possibleList))) != []">
         <CTOptions 
             :toDisplay='this.possibleList'
@@ -48,5 +50,6 @@
 <style scoped>
     .namesearchparent {
         display: flex;
+        width: 100%;
     }
 </style>
